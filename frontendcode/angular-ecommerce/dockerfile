@@ -1,0 +1,11 @@
+FROM node:15.6-alpine AS build
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+### STAGE 2: Run ###
+FROM nginx:1.19.6-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /usr/src/app/dist/angular-ecommerce /usr/share/nginx/html
