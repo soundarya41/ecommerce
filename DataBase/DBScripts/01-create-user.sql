@@ -1,6 +1,6 @@
-CREATE USER 'ecommerceapp'@'localhost' IDENTIFIED BY 'ecommerceapp';
+CREATE USER 'ecommerceapp' IDENTIFIED BY 'ecommerceapp';
 
-GRANT ALL PRIVILEGES ON * . * TO 'ecommerceapp'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'ecommerceapp';
 
 #
 # Starting with MySQL 8.0.4, the MySQL team changed the 
@@ -12,4 +12,4 @@ GRANT ALL PRIVILEGES ON * . * TO 'ecommerceapp'@'localhost';
 # See the MySQL Reference Manual for details: 
 # https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html
 #
-ALTER USER 'ecommerceapp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ecommerceapp';
+ALTER USER 'ecommerceapp' IDENTIFIED WITH mysql_native_password BY 'ecommerceapp';

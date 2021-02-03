@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  ecommerce-mysql:
+    build: ../DataBase/D
+  backendserver:
+    build: .
+    ports:
+           - "8081"
+    links:
+           - "ecommerce-mysql"
+    depends_on:
+           - "ecommerce-mysql"
+    restart: always
+    
+  frontend: 
+    build: ../frontendcode/angular-ecommerce/
+    links:
+          - "backendserver"
+    depends_on:
+          - "backendserver"
+    ports:
+           - "80:80"     
